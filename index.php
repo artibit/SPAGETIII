@@ -276,8 +276,8 @@ else {
     {
         $logins_chars = '0123456789abcdefghijklmnopqrstuvwxyz';
         $pass_chars='0123456789abcdefghijklmnopqrstuvwxyz-_';
-        $login = substr(str_shuffle($logins_chars), 0, 3);
-        $password =substr(str_shuffle($pass_chars),0,3);
+        $login = substr(str_shuffle($logins_chars), 0, 8);
+        $password =substr(str_shuffle($pass_chars),0,8);
         // Сохраняем в Cookies.
         setcookie('login', $login);
         setcookie('pass', $password);
