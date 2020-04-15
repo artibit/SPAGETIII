@@ -39,7 +39,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 </div>
 <?php
 }
-// Иначе, если запрос был методом POST, т.е. нужно сделать авторизацию с записью логина в сессию.
 else {
         $flag=FALSE;
         $MESSAGE='';

@@ -87,10 +87,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $values['biography'] = empty($_COOKIE['biography_value']) ? '' : strip_tags($_COOKIE['biography_value']);
     $values['consent'] = empty($_COOKIE['consent_value']) ? '' : strip_tags($_COOKIE['consent_value']);
     if (session_start() && !empty($_COOKIE[session_name()]) && !empty($_SESSION['login'])) {
-        $user = 'u15699';
-        $password = '8026331';
+        $user = 'u16344';
+        $password = '4555013';
         $log=$_SESSION['login'];
-        $db = new PDO('mysql:host=localhost;dbname=u15699', $user, $password,
+        $db = new PDO('mysql:host=localhost;dbname=u16344', $user, $password,
         array(PDO::ATTR_PERSISTENT => true));
         try{
         $stmt = $db->prepare("SELECT name,email,birth,sex,limbs,sverh,bio,consent FROM info WHERE login = '$log'");
@@ -239,11 +239,11 @@ else {
 
         if (session_start() && !empty($_COOKIE[session_name()]) && !empty($_SESSION['login'])) 
         {//перезапись по логину
-        $user = 'u15699';
-        $password = '8026331';
+        $user = 'u16344';
+        $password = '4555013';
         $sverh_separated='';
         $log=$_SESSION['login'];
-        $db = new PDO('mysql:host=localhost;dbname=u15699', $user, $password,array(PDO::ATTR_PERSISTENT => true));
+        $db = new PDO('mysql:host=localhost;dbname=u16344', $user, $password,array(PDO::ATTR_PERSISTENT => true));
         try {
         $stmt = $db->prepare("UPDATE info SET name=?,email=?,birth=?,sex=?,limbs=?,sverh=?,bio=?,consent=? WHERE login='$log' ");
         
