@@ -1,0 +1,21 @@
+.Form{
+	border:10px;
+	border-radius:5px;
+	background-color:#A9A9A9;
+	display: inline-block;
+	vertical-align:top;
+	border-color:black;
+}
+body{
+	background-image:url("les.jpg");
+}
+.error{
+	background-color:red;
+}
+.good{
+	border:2px solid yellow;
+	background-color: yellow;
+}
+#events{
+	text-align:center;
+}
