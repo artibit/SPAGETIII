@@ -293,9 +293,9 @@ else {
                 }
             }
         }
-        $user = 'u15699';
-        $pass = '8026331';
-        $db = new PDO('mysql:host=localhost;dbname=u15699', $user, $pass,
+        $user = 'u16344';
+        $pass = '4555013';
+        $db = new PDO('mysql:host=localhost;dbname=u16344', $user, $pass,
         array(PDO::ATTR_PERSISTENT => true));
         try {
         $stmt = $db->prepare("INSERT INTO info(name,login,password,email, birth, sex, limbs,sverh,bio,consent) 
