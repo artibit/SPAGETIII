@@ -195,6 +195,7 @@
                 </div>
                 </br>
                 <input type="submit" value="Отправить">
+				<input value="войти" type="button" onclick="location.href='login.php'" />
 			</form>
             <?php   
                     if(!empty($_SESSION['login'])){
