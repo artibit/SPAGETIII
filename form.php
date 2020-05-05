@@ -2,19 +2,25 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Form</title>
+		<title>ThE FoRm</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
 		<div class="Form">
-			<?php if(empty($_SERVER['PHP_AUTH_USER']) && empty($_SERVER['PHP_AUTH_PW'])){
+        <?php if(empty($_SERVER['PHP_AUTH_USER']) && empty($_SERVER['PHP_AUTH_PW'])){
             print('<p><a href="admin.php">Вы являетесь администратором?</a></p>');
+			else  print('<p><a href="admin.php">Вернуться к админу ?</a></p>');
         }?>  
-			<div id="events">
-				<p>Form</p>
+        <div id="events">
+				<p>Please fill out the Form</p>
 			</div>
 			<form method="post" action="index.php" name="contract" >
                 <?php
+                unset($_SERVER['PHP_AUTH_USER']);
+                unset($_SERVER['PHP_AUTH_PW']);
+                if(empty($_SESSION['login'])){
+                    print('Если у вас уже сть ЛОГИН и ПАРОЛЬ,можете войти <a href="login.php">здесь</a> .</br>');
+                }
                 if(!empty($messages['login_and_password'])){
                     print($messages['login_and_password']);
                 }
@@ -49,7 +55,7 @@
                         $email=$values['email'];
                     }
                     ?>
-					Email:<input name="email" value="<?php print $email?>" class="<?php print $ERROR?>" placeholder="email@mail.ru">
+					Email:<input name="email" value="<?php print $email?>" class="<?php print $ERROR?>" placeholder="email@yandex.ru">
 				</div>
                 </br>
 				<div id="BIRTHYEAR">
@@ -176,7 +182,7 @@
                         }
                         ?>
                         <p class="<?php print $ERROR?>" >
-                            <textarea cols="45" name="biography" placeholder="Here is your biography"><?php if($BIO!='')print $BIO;?></textarea>
+                            <textarea cols="45" name="biography" placeholder="Here is your brief biography..."><?php if($BIO!='')print $BIO;?></textarea>
                         </p>
                     </div>
                 </br>
@@ -192,13 +198,12 @@
                         $consent='checked';
                     }
                     ?>
-                    <span class="<?php print $ERROR?>" >You want go home?
+                    <span class="<?php print $ERROR?>" >Do you agree that you are selling your soul to the devil?
 					    <input type="checkbox" name="consent"  value="yes" <?php print $consent?>>
                     </span>
                 </div>
                 </br>
                 <input type="submit" value="Отправить">
-				<input value="войти" type="button" onclick="location.href='login.php'" />
 			</form>
             <?php   
                     if(!empty($_SESSION['login'])){
