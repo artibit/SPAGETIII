@@ -8,8 +8,8 @@
 	<body>
 		<div class="Form">
 			<?php if(empty($_SERVER['PHP_AUTH_USER']) && empty($_SERVER['PHP_AUTH_PW'])){
-                          print('<p><a href="admin.php">Вы админ?</a></p>');
-                         }?>  
+            print('<p><a href="admin.php">Вы являетесь администратором?</a></p>');
+        }?>  
 			<div id="events">
 				<p>Form</p>
 			</div>
