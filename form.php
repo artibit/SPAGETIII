@@ -9,7 +9,7 @@
 		<div class="Form">
         <?php if(empty($_SERVER['PHP_AUTH_USER']) && empty($_SERVER['PHP_AUTH_PW'])){
             print('<p><a href="admin.php">Вы являетесь администратором?</a></p>');
-        } else { input type="admin.php" value="Вернуться к админу ?"; }?>   
+        } else {print('<p><a href="admin.php">Вернуться к админу ?</a></p>'); }?>     
         <div id="events">
 				<p>Please fill out the Form</p>
 			</div>
