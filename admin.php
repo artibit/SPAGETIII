@@ -7,10 +7,12 @@
 	background-image:url("les.jpg");
 }
 table,th,td{
-  border:2px solid black;
-  margin:auto;
-  border-collapse: collapse;
+  border:10px;
+  border-radius:5px;
   background-color:#A9A9A9;
+  display: inline-block;
+  vertical-align:top;
+  border-color:black;
 }
 </style>
 </head>
