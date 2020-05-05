@@ -7,12 +7,16 @@
 	background-image:url("les.jpg");
 }
 table,th,td{
+  align-content: center;
   border:10px;
   border-radius:5px;
-  background-color:#A9A9A9;
-  display: inline-block;
-  vertical-align:top;
+  background-color:#52cc00;
+  width:auto;
+  max-width:600px;
   border-color:black;
+  margin:auto;
+  padding:3px;
+  padding-left:5px;
 }
 </style>
 </head>
@@ -41,7 +45,7 @@ md5(md5($_SERVER['PHP_AUTH_PW'])) != md5($users[$loginadm[0]])) {
   print('<h1>401 Требуется авторизация</h1>');
   exit();
 }
-print("<form action='' method='POST' style='background-color:#A9A9A9;display: inline-block;'>
+print("<form action='' method='POST' style='background-color:#52cc00;display: inline-block;'>
 <p style='font-size:150%;'>Добро пожаловать,{$_SERVER['PHP_AUTH_USER']}.</p>
 <select name='dead' size='1'>
 <option value=''>...</option>");
