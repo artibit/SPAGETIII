@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         setcookie('login', '',100000);
         setcookie('pass', '', 100000);
         $messages['save'] = 'Спасибо, результаты сохранены.';
-        if (!empty($_COOKIE['pass'])) {
+        if (!empty($_COOKIE['pass']) && empty($_SESSION['login'])) {
             $messages['login_and_password'] = sprintf('Вы можете <a href="login.php">войти</a> с логином <strong>%s</strong>
             и паролем <strong>%s</strong> для изменения данных.',
             strip_tags($_COOKIE['login']),
@@ -237,7 +237,7 @@ else {
                 setcookie('sex_error', '', 100000);setcookie('consent_error', '', 100000);
             }
 
-        if (session_start() && !empty($_COOKIE[session_name()]) && !empty($_SESSION['login'])) 
+        if (session_start() && !empty($_COOKIE[session_name()]) && !empty($_SESSION['login']) && !empty($_COOKIE['login'])) 
         {//перезапись по логину
         $user = 'u16344';
         $password = '4555013';
@@ -273,7 +273,7 @@ else {
             exit();
         }
     }else 
-    {
+    {   
         $logins_chars = '0123456789abcdefghijklmnopqrstuvwxyz';
         $pass_chars='0123456789abcdefghijklmnopqrstuvwxyz-_';
         $login = substr(str_shuffle($logins_chars), 0, 8);
@@ -325,8 +325,8 @@ else {
         catch(PDOException $e){
         print('Error : ' . $e->getMessage());
         exit();
+            }
         }
-    }
     setcookie('save', '1');
     header('Location:index.php');
 }
