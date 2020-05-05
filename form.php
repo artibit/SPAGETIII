@@ -2,14 +2,14 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>ThE FoRm</title>
+		<title>form</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
 		<div class="Form">
         <?php if(empty($_SERVER['PHP_AUTH_USER']) && empty($_SERVER['PHP_AUTH_PW'])){
             print('<p><a href="admin.php">Вы являетесь администратором?</a></p>');
-        } else {print('<p><a href="admin.php">Вернуться к админу ?</a></p>'); }?>  
+        } else { <input type="admin.php" value="Вернуться к админу ?">; }?>  
         <div id="events">
 				<p>Please fill out the Form</p>
 			</div>
