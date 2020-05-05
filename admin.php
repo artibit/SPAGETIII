@@ -69,7 +69,7 @@ if(!empty($_POST['dead'])){
       $die='';
       header('Location:admin.php');
   }
-$database='';
+$database='u16344';
 $host='localhost';
 $link = mysqli_connect($host, $user, $password, $database) 
     or die("Ошибка " . mysqli_error($link)); 
