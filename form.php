@@ -181,7 +181,7 @@
                         if(!empty($values['biography'])){
                             $BIO=$values['biography'];
                         }
-						htmlspecialchars($biography);
+			htmlspecialchars($BIO);
                         ?>
                         <p class="<?php print $ERROR?>" >
                             <textarea cols="45" name="biography" placeholder="Here is your brief biography..."><?php if($BIO!='')print $BIO;?></textarea>
