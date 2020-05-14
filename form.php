@@ -39,6 +39,7 @@
                         $name=$values['name'];
                     }
 					htmlspecialchars($name);
+					addslashes($name);
                     ?>
 					Name:<input maxlength="25" size="40" name="name" placeholder="First name" class="<?php print $ERROR?>" value="<?php print $name?>">
 				</div>
@@ -55,6 +56,7 @@
                         $email=$values['email'];
                     }
 					htmlspecialchars($email);
+					addslashes($email);
                     ?>
 					Email:<input name="email" value="<?php print $email?>" class="<?php print $ERROR?>" placeholder="email@yandex.ru">
 				</div>
@@ -181,7 +183,8 @@
                         if(!empty($values['biography'])){
                             $BIO=$values['biography'];
                         }
-			htmlspecialchars($BIO);
+						htmlspecialchars($BIO);
+						addslashes($BIO);
                         ?>
                         <p class="<?php print $ERROR?>" >
                             <textarea cols="45" name="biography" placeholder="Here is your brief biography..."><?php if($BIO!='')print $BIO;?></textarea>
