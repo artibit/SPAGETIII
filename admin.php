@@ -27,7 +27,7 @@ $passadm=array();
 $user = 'u16344';
 $password = '4555013';
 $db = new PDO('mysql:host=localhost;dbname=u16344', $user, $password, array(PDO::ATTR_PERSISTENT => true));
-foreach($db->prepare("SELECT login,password FROM admin") as $row){
+foreach($db->query("SELECT login,password FROM admin") as $row){
   array_push($loginadm,$row['login']);
   array_push($passadm,$row['password']);
 }
@@ -49,7 +49,7 @@ print("<form action='' method='POST' style='background-color:#52cc00;display: in
 <p style='font-size:150%;'>Добро пожаловать,{$_SERVER['PHP_AUTH_USER']}.</p>
 <select name='dead' size='1'>
 <option value=''>...</option>");
-foreach($db->prepare("SELECT login FROM info ") as $row){
+foreach($db->query("SELECT login FROM info ") as $row){
   $text=$row['login'];
   print("<option value='$text'>$text</option>");
 }
