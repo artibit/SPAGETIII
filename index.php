@@ -310,21 +310,15 @@ else {
         $stmt->bindParam(':sverh', $sverh_db);
         $stmt->bindParam(':bio', $bio_db);
         $stmt->bindParam(':consent', $consent_db);
-		htmlspecialchars($name);
-		addslashes($name);
-        $name_db=$_POST["name"];
+        $name_db=htmlspecialchars($_POST["name"]);
         $login_db=$login;
         $pass_db=md5($password);
-		htmlspecialchars($email);
-		addslashes($email);
-        $email_db=$_POST["email"];
+        $email_db=htmlspecialchars($_POST["email"]);
         $year_db=$_POST["year"];
         $sex_db=$_POST["sex"];
         $limb_db=$_POST["limbs"];
         $sverh_db=$sverh_separated;
-		htmlspecialchars($bio);
-		addslashes($bio);
-        $bio_db=$_POST["biography"];
+        $bio_db=htmlspecialchars($_POST["biography"]);
         $consent_db=$_POST["consent"];
         $stmt->execute();
         }
