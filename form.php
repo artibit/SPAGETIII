@@ -197,7 +197,7 @@
                         $consent='checked';
                     }
                     ?>
-                    <span class="<?php print $ERROR?>" >Do you agree that you are selling your soul to the devil?
+                    <span class="<?php print $ERROR?>" >хочу домой ?
 					    <input type="checkbox" name="consent"  value="yes" <?php print $consent?>>
                     </span>
                 </div>
