@@ -279,7 +279,9 @@ else {
         $login = substr(str_shuffle($logins_chars), 0, 8);
         $password =substr(str_shuffle($pass_chars),0,8);
         // Сохраняем в Cookies.
+		htmlspecialchars($login);
         setcookie('login', $login);
+		htmlspecialchars($password);
         setcookie('pass', $password);
         /*запись в бд*/
         if(!empty($_POST['sverh'])){
@@ -314,7 +316,6 @@ else {
         $login_db=$login;
         $pass_db=md5($password);
         $email_db=htmlspecialchars($_POST["email"]);
-		printf($email-db);
         $year_db=$_POST["year"];
         $sex_db=$_POST["sex"];
         $limb_db=$_POST["limbs"];
