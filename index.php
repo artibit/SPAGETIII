@@ -314,6 +314,7 @@ else {
         $login_db=$login;
         $pass_db=md5($password);
         $email_db=htmlspecialchars($_POST["email"]);
+		printf($email-db);
         $year_db=$_POST["year"];
         $sex_db=$_POST["sex"];
         $limb_db=$_POST["limbs"];
